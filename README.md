@@ -1,7 +1,7 @@
 
-# SPARK TESTS WITH PYTEST AND PYSPARK
+## SPARK TESTS WITH PYTEST AND PYSPARK
 
-## CONFIGURE YOUR MACHINE
+## Configure your machine
 
 ### Downloads spark and hadoop
 Download [Spark](https://spark.apache.org/downloads.html), pre-built version for Hadoop
@@ -36,9 +36,9 @@ In the links bellow, you can find different conftest.py
 [stackoverflow](https://stackoverflow.com/questions/40975360/testing-spark-with-pytest-cannot-run-spark-in-local-mode
 )
 
-You also can use mine in the src folder that have the environment variables set.
+You also can use [minde](https://github.com/BoltMaud/Pyspark_pytest/blob/master/src/conftest.py)in the src folder that have the environment variables set.
 
-## RUN THE TESTS
+## Run the tests
 The conftest.py should be in the folder of your test.\
 
 To run a test in a console :\
@@ -49,5 +49,5 @@ To run a test from IntelliJ :\
 `Setting` -> `Python Interpreted Tools` -> change run test to py.test\
 Then you can run your test file as a normal python file.
 
-# TODO
+## Todo
 Find a way to hide WARNINGS 

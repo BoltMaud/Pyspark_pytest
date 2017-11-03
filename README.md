@@ -4,7 +4,7 @@
 ## Configure your machine
 
 ### Downloads spark and hadoop
-Download [Spark](https://spark.apache.org/downloads.html), pre-built version for Hadoop
+Download [Spark](https://spark.apache.org/downloads.html), pre-built version for Hadoop \
 Download [Hadoop](https://github.com/steveloughran/winutils/blob/master/hadoop-2.7.1/bin/winutils.exe)
 
 I use Spark 2.2 and hadoop 2.7.

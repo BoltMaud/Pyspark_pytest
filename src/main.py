@@ -36,13 +36,17 @@ def sparkApp2(file, sc):
     return rdd
 
 '''
-From a Source file, get <object_id, count(*), max(source_id), min(ra), max(ra), min(decl), max(decl)> per object_id 
+From all the Source files from a dir, get <object_id, count(*), max(source_id), min(ra), max(ra), min(decl), max(decl)> per object_id 
 @:see Source.sql to know the position of each element OR use the first function to get the dict 
-@:param filename : name of the source file
+@:param dir : name of the source files directory
 @:param sc : SparkContext
+For the test unit I only used one file
 '''
-def sparkApp3(dir,sc):
-    source = sc.textFile(dir+"/*.csv")
+def sparkApp3(dir,sc,test=False):
+    if test:
+        source=sc.textFile(dir)
+    else :
+        source = sc.textFile(dir + "/*.csv")
     rdd =  source.filter(lambda line: len(line) > 0)\
         .map(lambda line: line.split(','))\
         .filter(lambda line: line[3] !="NULL")\
@@ -50,8 +54,19 @@ def sparkApp3(dir,sc):
         .reduceByKey(lambda x,y: [x[0]+y[0],max(x[1],y[1]),min(x[2],y[2]),max(x[3],y[3]),min(x[4],y[4]),max(x[5],y[5])] ).collect()
     return rdd
 
-def sparkApp4(dir,sc):
-    rdd = sc.textFile(dir+"/*.csv")
+
+'''
+From all the Source files from a dir, the object_id that moved the most 
+@:see Source.sql to know the position of each element OR use the first function to get the dict 
+@:param dir : name of the source files directory
+@:param sc : SparkContext
+For the test unit I only used one file
+'''
+def sparkApp4(dir,sc,test=True):
+    if test :
+        rdd=sc.textFile(dir)
+    else :
+        rdd = sc.textFile(dir+"/*.csv")
     tab =  rdd.filter(lambda line: len(line) > 0)\
         .map(lambda line: line.split(','))\
         .filter(lambda line: line[3] !="NULL")\

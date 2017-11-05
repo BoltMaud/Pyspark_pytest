@@ -3,14 +3,14 @@
 
 ## Configure your machine
 
-### Downloads spark and hadoop
+### Download spark and hadoop
 * Download [Spark](https://spark.apache.org/downloads.html), pre-built version for Hadoop.
 * Download [Hadoop](https://github.com/steveloughran/winutils/blob/master/hadoop-2.7.1/bin/winutils.exe).
 
 I used Spark 2.2 and hadoop 2.7.
 
 ### Folders
-* Extract and Move Spark in C:/ (or where you want in your computer)
+* Extract and move Spark in C:/ (or where you want in your computer)
 * Move the winutils.exe in C:/Hadoop/bin/
 
 ### Environment variables
@@ -36,7 +36,7 @@ pip install pyspark
 
 ## DOWNLOAD the conftest.py
 
-In the links bellow, you can find different conftest.py
+In the links bellow, you can find different configuration for pytest to launch the spark context : 
 
 * [kawadia](https://github.com/kawadia/pyspark.test)
 * [stackoverflow](https://stackoverflow.com/questions/40975360/testing-spark-with-pytest-cannot-run-spark-in-local-mode
